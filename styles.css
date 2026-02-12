@@ -1,0 +1,576 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #f3f2f269;
+}
+
+body,header,nav,ul,li,section,h1,h2,h3,h4,p,a{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--bg-color);
+}
+
+
+/* --- NAVBAR STYLES --- */
+
+.header{
+    display: flex;
+    flex-direction: row;
+    background-image: url(header-background.jpg);
+    background-size:cover;
+    background-position: center;
+    min-height:60dvh;
+}
+
+h1{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin: auto;
+    color:#fff;
+    letter-spacing: 10px;
+}
+
+.header__nav {
+    background-color: #0009;
+    animation: aparecer 1.8s both;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #777; 
+    position: fixed;
+    z-index: 50;
+    align-items: center;
+
+}
+
+.navbar__img {
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 5px 0 5px 15px;
+    width: 50px;
+}
+
+.navbar__list{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: end;
+    align-items: center;
+}
+
+.navbar__list-item {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.navbar__list-item a {
+    text-decoration: none;
+    list-style: none;
+    padding: 4px;
+    color: #fff;
+}
+
+.navbar__list-item a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+/* --- NAVBAR QUERIES --- */ 
+
+
+@media screen and (min-width:600px){
+
+h1{
+    font-size: 4rem;
+}
+
+
+
+.navbar__list-item {
+    display: block;
+    margin: 0 60px;
+}
+
+
+.navbar__open-menu {
+    background-color: transparent;
+    color: transparent;
+    display: none;
+}
+
+.open-menu__container {
+    display: none;
+}
+
+}
+
+@media screen and (max-width:380px){
+    .navbar__list-item a{
+        font-size: 13px;
+    }
+}
+
+
+
+
+
+
+/* --- NAVBAR ANIMATIONS --- */
+
+@keyframes aparecer {
+    from{
+        translate: 0 -40px;
+        opacity: .4;
+    }
+
+    to {
+        translate:  0 0;
+        opacity: 1;
+    }
+}
+
+/* --- ABOUT US SECTION --- */
+
+.about-us {
+    margin: auto;
+    padding-top: 110px;
+    min-height: 70dvh;
+    color: var(--font-color);
+    background-color: #222;
+    width: 100%;
+}
+
+.about-us-wrapper{
+    max-width: 1280px;
+    margin: auto;
+}
+
+.about-us-data {
+    margin: 0 20px;
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #000c;
+    animation: about-us__animation 1s both;
+    text-align: center;
+}
+
+.about-us-data:first-child {
+    grid-row-start: 1;
+    grid-row-end:2;
+    grid-column-start:1 ;
+    grid-column-end: 3;
+    text-align: center;
+}
+
+
+.about-us-data h2 {
+    margin: auto;
+    font-size: 35px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #222;
+    max-width: 700px;
+}
+
+/* --- ABOUT US QUERIES --- */
+
+@media screen and (min-width:600px){
+    .about-us {
+        margin-bottom: 50px;
+    }
+
+    .about-us-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .about-us-data {
+        margin-top: 0;
+        font-size: 17px;
+    }
+
+    .about-us-data h2 {
+        font-size: 50px;
+    }
+    
+}
+
+
+/* --- ABOUT US ANIMATIONS --- */
+
+@keyframes about-us__animation {
+    from {
+        translate: 0 50px;
+    }
+
+    to{
+        translate: 0 0;
+    }
+}
+
+
+
+/* --- SEDES SECTION --- */
+
+.sedes{
+    padding: 50px 0;
+    min-height: 90dvh;
+}
+
+.sedes__title{
+    color: #222;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 5px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.sedes__wrapper  {
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    gap: 10px;
+    max-width: 1600px;
+    margin: auto;
+}
+
+.sede-item {
+    text-align: center;
+    background-color: #fff;
+    margin: 30px;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 0  5px 1px #999;
+}
+
+.sede-item:hover {
+    transform: translateY(-7px);
+    transition: .3s ease;
+}
+
+.sede-item h3{
+    font-size: 30px;
+}
+
+.sede-item img {
+    max-width: 100%;
+    height: auto;
+    padding:20px;
+    border-radius: 12px;
+}
+
+.sede-item p {
+    font-size: 16px;
+}
+
+
+/* --- SEDES QUERIES --- */
+
+@media screen and (min-width:600px){
+    .sedes__wrapper {
+        flex-direction: row;
+    }
+}
+
+
+
+/* --- CLASES SECTION --- */
+
+.clases{
+    border-top:  1px solid #777;
+    max-width: 70%;
+    margin: auto;
+}
+
+.clases__title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 60px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+.table__container{
+    min-height: 90dvh;
+    overflow-X: auto;
+}
+
+.clases__table{
+    margin: auto;
+    margin-top: 50px;
+    min-width: 900px;
+    border-spacing: 0;
+    font-weight: 100;
+    border: 1px solid #bbb;
+}
+
+
+.clases__table td,th {
+    border: 1px solid #bbb;
+    margin: 0;
+    padding: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 15px;
+}
+
+.clases__table thead th {
+    font-size: 20px;
+    padding: 15px 6px;
+    background-color: #eee;
+}
+
+.clases__table tr:nth-child(2n){
+    background-color: #eee;
+}
+
+
+/* --- CONTACTO SECTION --- */
+
+.contact {
+    min-height: 60dvh;
+    max-width: 70dvw;
+    margin: auto;
+    border-top:  1px solid #777;
+    animation: contact-animation ;
+    animation-timeline: view();
+    animation-range: contain;    
+
+}
+
+.contact__container{
+    height: 100%;
+    width:100%;
+}
+
+.contact__title {
+    margin: auto;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 60px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 200;
+    letter-spacing: 3px;
+}
+
+.contact__container p {
+    text-align: center;
+    font-size:20px ;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.contact__form-container {
+    height: 25rem;
+}
+
+.contact__form{
+    margin: auto;
+    display: inline-block;
+}
+
+.contact__form input {
+    color: #555;
+    width: 100%;
+    padding: 15px;
+    margin: 7px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    outline: 0;
+    border-radius: 4px;
+}
+
+.contact__form input{
+    grid-column-start:  1;
+    grid-column-end: 3;
+}
+
+.contact__form textarea {
+    min-height: 150px;
+    width: 100%;
+    padding: 15px;
+    margin: 7px;
+    resize: vertical;
+    font-size: 16px;
+    font-weight: 100;
+    border-radius: 4px;
+}
+
+.contact__form textarea::placeholder{
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.contact__form input:focus {
+    border: 1px solid #111;
+}
+
+
+.contact__form textarea:focus{
+    outline: 0;
+    font-weight: 100;
+    border: 1px solid #111;
+}
+
+.contact__form input[type="submit"]{
+    width: 100%;
+    margin: auto;
+    grid-column-start:1 ;
+    grid-column-end:5 ;
+}
+
+
+/* --- CONTACT QUERIES --- */
+
+@media screen and (min-width:600px){
+    .contact__container p {
+        width: 50%;
+    }
+
+    .contact__form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 2fr 2fr 2fr 2fr;
+        gap: 15px;
+        max-width: 50%;
+    }
+
+    .contact__form textarea {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    padding: 15px;
+    border: 1px solid #ddd;
+    resize: none;
+}
+}
+
+
+
+
+/* --- FOOTER SECTION --- */
+
+.footer {
+    color: #fff;
+    margin-top: 100px;
+    min-height: 100px;
+    min-width: 100%;
+    background-color: #333;
+    text-align: center;
+}
+
+.footer__contact {
+    display: block;
+    padding: 20px;
+    background-color: inherit;
+    text-align: center;
+}
+
+.footer__contact h3 {
+    padding: 0 10px;
+    display: inline;
+}
+
+.footer__contact p {
+    display: inline;
+}
+
+.copyright {
+    background-color: inherit;
+    min-width: 100%;
+    font-size: 14px;
+    padding: 20px;
+}
+
+
+
+/* --- WHASTAPP CONTACT  SECTION --- */
+
+
+.wsp-contact {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+.wsp-contact img{
+    width: 60px;
+}
+
+.wsp-contact p {
+    display: none;
+}
+
+
+
+
+@media screen and (min-width:600px){
+.wsp-contact {
+        width: 90px;
+        right: 10px;
+        bottom: 20px;
+    }
+
+.wsp-contact img {
+        width: 90px;
+    }
+
+.wsp-contact:hover p {
+    display: block;
+}
+
+.wsp-contact p {
+    display: none;
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    bottom: 100px;
+    background-color: #222;
+    padding:10px;
+    width: max-content;
+    border-radius: 10px;
+    animation: wsp-animation 2s both;
+}
+
+.wsp-contact:hover::before {
+    content: '';
+    position: absolute;
+    box-shadow: 4px 4px 0 9px #000;
+    bottom: 110px;
+    right: 50px;
+    animation: wsp-animation 1s ;
+    transform: rotate(45deg);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
